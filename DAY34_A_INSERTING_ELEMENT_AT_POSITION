@@ -1,0 +1,49 @@
+Q67: Insert an element in an array at a given position.
+
+/*
+Sample Test Cases:
+Input 1:
+4
+10 20 30 40
+2 15
+Output 1:
+10 20 15 30 40
+
+*/
+
+
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+    int arr[5] = {10, 20, 30, 40}; // Array with space for one more element
+    int pos = 2;                  // Position to insert the new element
+    int element = 15;             // Element to insert
+
+    // Display the original array
+    printf("Original array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Shift elements to the right to make space for the new element
+    for (int i = n; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    // Insert the new element at the specified position
+    arr[pos] = element;
+
+    // Increment the size of the array
+    n++;
+
+    // Display the updated array
+    printf("Array after insertion: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
