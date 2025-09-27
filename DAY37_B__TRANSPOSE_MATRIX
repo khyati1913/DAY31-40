@@ -1,0 +1,47 @@
+Q74: Find the transpose of a matrix.
+
+/*
+Sample Test Cases:
+Input 1:
+2 3
+1 2 3
+4 5 6
+Output 1:
+1 4
+2 5
+3 6
+
+*/
+
+#include <stdio.h>
+
+int main() {
+    int rows = 2, cols = 3;
+    int matrix[rows][cols], transpose[cols][rows];
+
+    // Reading matrix elements
+    printf("Enter elements for a %dx%d matrix:\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Calculating the transpose
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    // Printing the transpose
+    printf("Transpose of the matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
